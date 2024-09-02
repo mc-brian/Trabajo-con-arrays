@@ -37,6 +37,12 @@ function showList(array) {
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  // Escribe tu solución aquí
-  // Sugerencia de cómo mostrar el array => showList(strangeArray);
+  // 1. Filtrar para sacar del array raro solo los elementos de tipo String
+  const stringArray = strangeArray.filter((element) => typeof element === 'string');
+  
+  // 2. Ordenar el array de strings alfabéticamente, teniendo en cuenta que hay mayúsculas y minúsculas
+  const sortedStringArray = stringArray.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+  
+  // 3. Para mostrar el array que se obtuvo
+  showList(sortedStringArray);
 });
